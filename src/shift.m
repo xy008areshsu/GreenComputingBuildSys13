@@ -116,8 +116,8 @@ cost = cost / 100;     % convert from cents to dollars
 
 %% =======================Plot Results and Write to File===================
 nonDerPrice = sum(nonDeferLoad.*GridCost) / 100;
-ACPrice = sum(56 / 8 * GridCost(16:24)) / 100;
-originalPrice = nonDerPrice + ACPrice;
+%ACPrice = (24 / period) * sum(ACCentral(4) / ACCentral(3) * GridCost(16:16 + ACCentral(3))) / 100;
+originalPrice = nonDerPrice + ACprice;
 fprintf('The Electricity Bill without Smart Charge per Day is: $%f\n', originalPrice);
 fprintf('The Electricity Bill with Smart Charge Solar-Battery per Day is: $%f\n', cost);
 fprintf('Total cost reduction is: %f%%\n', (originalPrice - cost) / originalPrice * 100);

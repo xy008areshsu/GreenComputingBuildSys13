@@ -3,7 +3,11 @@ function [ newNonDeferLoad ] = mergeNonPreemtibleToNonDefer( nonDeferLoad, power
 %   Detailed explanation goes here
     newNonDeferLoad = nonDeferLoad;
     for i = startTime : startTime + execTime - 1
-        newNonDeferLoad(i) = newNonDeferLoad(i) + powerPerInterval;
+        index = mod(i, 24);
+        if index == 0
+            index = 1;
+        end
+        newNonDeferLoad(index) = newNonDeferLoad(index) + powerPerInterval;
     end
         
 end

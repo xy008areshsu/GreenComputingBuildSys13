@@ -1,0 +1,46 @@
+sellRTC = load('../simResults/sellSimResults.csv');
+sellTOU = load('../simResults/sellSimResultsTOU.csv');
+shiftRTC = load('../simResults/shiftSimResults.csv');
+shiftTOU = load('../simResults/shiftSimResultsTOU.csv');
+slideRTC = load('../simResults/slideSimResults.csv');
+slideTOU = load('../simResults/slideSimResultsTOU.csv');
+storeRTC = load('../simResults/storageSimResults.csv');
+storeTOU = load('../simResults/storageSimResultsTOU.csv');
+stretchRTC = load('../simResults/stretchSimResults.csv');
+stretchTOU = load('../simResults/stretchSimResultsTOU.csv');
+
+figure 
+plot(sellRTC(:, 1), sellRTC(:, 2), 'r', sellTOU(:, 1), sellTOU(:, 2), 'b');
+grid
+xlabel('Renewable Energy (1x)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('RTC', 'TOU')
+
+
+figure 
+plot(shiftRTC(:, 1), shiftRTC(:, 2), 'ro', shiftTOU(:, 1), shiftTOU(:, 2), 'bx');
+grid
+xlabel('Duty Cycle for a Shiftable Load (hours)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('RTC', 'TOU')
+
+figure 
+plot(slideRTC(:, 1), slideRTC(:, 2), 'ro', slideTOU(:, 1), slideTOU(:, 2), 'bx');
+grid
+xlabel('Slide Distance for a Slidable Load (hours)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('RTC', 'TOU')
+
+figure 
+plot(storeRTC(:, 1), storeRTC(:, 2), 'ro', storeTOU(:, 1), storeTOU(:, 2), 'bx');
+grid
+xlabel('Battery Capacity (kwh)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('RTC', 'TOU')
+
+figure 
+plot(stretchRTC(:, 1), stretchRTC(:, 2), 'ro', stretchTOU(:, 1), stretchTOU(:, 2), 'bx');
+grid
+xlabel('Stretch Factor (1x)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('RTC', 'TOU')
