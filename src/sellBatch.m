@@ -23,7 +23,7 @@ mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-amounts = 0 : 0.05: 5;    % in percentage of Green
+amounts = 0 : 0.05: 0;    % in percentage of Green
 costBenifitForDiffAmountGreen = zeros(size(amounts, 2), 1);
 jjj = 1;
 

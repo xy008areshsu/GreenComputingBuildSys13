@@ -4,6 +4,7 @@ clear; close all; clc;
 % grid power prices for every hour, in cents per kWh
 c = [2.7; 2.4; 2.3; 2.3; 2.3; 2.5; 2.8; 3.4; 3.8; 5; 6.1; 6.8; 7.4; 
             8.2; 10; 10.9; 11.9; 10.1; 9.2; 7; 7; 5.2; 4.2; 3.5];
+GridCost = c;
         
 %% Job 1, Fixed nonDeferablePower
 T = 24;
@@ -14,7 +15,7 @@ mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-Capa = 10:5:100;
+Capa = 10:5:10;
 costBenifitForDiffCapa = zeros(size(Capa, 2), 1);
 jjj = 1;
 

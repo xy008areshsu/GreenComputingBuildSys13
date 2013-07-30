@@ -318,9 +318,10 @@ clear i;
 % Indices of x which are considered to be integers, here bin_t should be
 % integers either 0 or 1, and bin_t is in indices from 7*T + 1 to 8*T
 xtype = 7 * T + 1 : 8 * T;  
-Opt = opti('f', f, 'ineq', A, b, 'eq', Aeq, beq, 'bounds', lowerBounds, upperBounds, 'xtype', xtype);
-[x,cost,exitflag,info] = solve(Opt);
-%[x, cost] = MILP(f, A, b, Aeq, beq, lowerBounds, upperBounds, xtype, 0.01);
+% Opt = opti('f', f, 'ineq', A, b, 'eq', Aeq, beq, 'bounds', lowerBounds, upperBounds, 'xtype', xtype);
+% [x,cost,exitflag,info] = solve(Opt);
+[x, cost] = MILP(f, A, b, Aeq, beq, lowerBounds, upperBounds, xtype, 0.01);
+info = '';
 % BattGreen = reshape(x(1 : T), T, 1);
 % BattGrid = reshape(x(T + 1: 2 * T), T, 1);
 % LoadBatt = reshape(x(2 * T + 1 : 3 * T), T, 1);

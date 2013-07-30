@@ -13,7 +13,7 @@ mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-periods = [1 2 3 4 6 8 12 24];
+periods = [2];
 costBenifitForDiffDutyCycles = zeros(size(periods, 2), 1);
 jjj = 1;
 

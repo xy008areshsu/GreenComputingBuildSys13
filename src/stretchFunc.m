@@ -1,12 +1,7 @@
 function [ cost ] = stretchFunc( alpha )
 
-%%Model the dishwasher, elasticity
-e = [0 1 0 1 0 0];  % 1 means it is elastic phase, 0 otherwise
-originPower = [0.1 2 0.1 2 0.25 0.1];    % power per phase, in kw
-originDelta = [0.25 0.25 0.75 0.25 0.25 0.25];  % duration time per phase, in hours
-startTime = 17;  % starting time of the load
 
-numOfPhases = size(e, 2);
+slideAndStretchLoad
 cost = 0;
 %% 
 % grid power prices for every hour, in cents per kWh

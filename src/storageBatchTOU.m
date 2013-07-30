@@ -5,6 +5,8 @@ clear; close all; clc;
 c = [6; 6; 6; 6; 6; 6; 6; 6; 10; 10; 10; 10; 9; 
             9; 9; 9; 9; 10; 10; 6; 6; 6; 6; 6];
         
+        GridCost = c;
+        
 %% Job 1, Fixed nonDeferablePower
 T = 24;
 Load = zeros(T, 1);
@@ -14,7 +16,7 @@ mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-Capa = 10:5:100;
+Capa = 10:5:10;
 costBenifitForDiffCapa = zeros(size(Capa, 2), 1);
 jjj = 1;
 

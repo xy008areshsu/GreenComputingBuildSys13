@@ -45,7 +45,7 @@ execTime = job(3);
 powerPerCycle = job(4);
 
 %in kWh, battery's usable capacity
-BattCapa = 30;  
+BattCapa = 10;  
 
 % battery charging efficiency
 BattE = 0.855; 
@@ -65,10 +65,13 @@ alpha = 0.4;
 % Infinite number value, for MILP
 infVal = 10;
 
+slideDis = 5;
+
 %% =========Convert Non Preemptible Loads into Non Deferable Loads=========
 % Try every possible time scheduling for Non Preemptible Loads, converting
 % into Non Deferable Loads
 nonDeferLoadChoice = zeros(T - execTime + 1, T);
+% nonDeferLoadChoice = zeros(T, slideDis);
 costs = zeros(T - execTime + 1, 1);
 powerPerInterval = powerPerCycle / execTime;
 
@@ -77,6 +80,12 @@ for i = 1 : T - execTime + 1
     nonDeferLoadChoice(i, :) = mergeNonPreemtibleToNonDefer(nonDeferLoad, powerPerInterval, i, execTime)';
     [~, costs(i), ~, ~] = LPBatterySolarDeferableFunction(T, nonDeferLoadChoice(i, :)', GridCost, BattCapa, BattE, Green, alpha, infVal,preemptibleLoads);
 end
+
+% for i = 17: 17 + slideDis
+%     nonDeferLoadChoice(:, i - 17 + 1) = mergeNonPreemtibleToNonDefer(nonDeferLoad, powerPerInterval, i, execTime)';
+%     [~, costs(i), ~, ~] = LPBatterySolarDeferableFunction(T, nonDeferLoadChoice(:, i - 17 + 1), GridCost, BattCapa, BattE, Green, alpha, infVal,preemptibleLoads);
+% end
+
 
 % Get the minimum cost for these schedulings
 [minCost, minIndex ] = min(costs);
@@ -101,7 +110,7 @@ if abs(cost - minCost) <= 0.01
     refregPower = zeros(T, 1);
     dishwashserPower = zeros(T, 1);
     ACPower(16:24) = ACCentral(4) / ACCentral(2);
-    refregPower(1:24) = refregerator(4) / refregerator(2);
+%     refregPower(1:24) = refregerator(4) / refregerator(2);
     dishwashserPower(17: 17 + execTime - 1) = powerPerCycle / execTime;
     originalPrice = sum((nonDeferLoad + ACPower + refregPower + dishwashserPower) .* GridCost) / 100;
     info

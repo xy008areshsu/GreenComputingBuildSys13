@@ -1,24 +1,42 @@
 clear; close all; clc;
 
 %% 
-% grid power prices for every hour, in cents per kWh
-GridCost = [2.7; 2.4; 2.3; 2.3; 2.3; 2.5; 2.8; 3.4; 3.8; 5; 6.1; 6.8; 7.4; 
-            8.2; 10; 10.9; 11.9; 10.1; 9.2; 7; 7; 5.2; 4.2; 3.5];
+% grid power prices for every hour, in cents per kWh, TOU
+c = [6; 6; 6; 6; 6; 6; 6; 6; 10; 10; 10; 10; 9; 
+            9; 9; 9; 9; 10; 10; 6; 6; 6; 6; 6];
+
+        
+        GridCost = c;
+        beta = mean(GridCost);
+adjustFactor = 4;
         
 %% Job 1, Fixed nonDeferablePower
 T = 24;
 Load = zeros(T, 1);
-neededPower = 2;
+neededPower = 4;
+period = 24;
 mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-costBenifitForDiffCapa = zeros(9, 1);
+Capa = 10:5:10;
+costBenifitForDiffCapa = zeros(size(Capa, 2), 1);
 jjj = 1;
-for C = 10 : 5 : 50
+
+
+for C = Capa
     for iii = 1 : sss
         Load = LoadTotal(:, iii);
-        storage
+        avgPowerPerDay = mean(Load);
+        for k = 1 : T
+            if Load(k) <= avgPowerPerDay
+                GridCost(k) = beta;
+            else
+                GridCost(k) = (1 + adjustFactor) * beta;
+            end
+        end
+        c = GridCost;
+        storageNew
         price(1, iii) = originalPrice;    
         price(2, iii) = cost;    %cost after optimization
         price(3, iii) = (originalPrice - cost) / originalPrice * 100;  %cost reduction
@@ -30,12 +48,18 @@ for C = 10 : 5 : 50
     jjj = jjj + 1;
 end
 
-plot(costBenifitForDiffCapa, 'r', 'LineWidth',2);
+
+storageSimResultDataTOU = [Capa' costBenifitForDiffCapa];
+
+plot(Capa', costBenifitForDiffCapa, 'r', 'LineWidth',2);
 title('Average Electric Bill Cost Reduction(%) with Different Battery Capacities');
 xlabel('Battery Capacity (kWh)');
 ylabel('Cost Reduction (%) ');
 grid
 set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
 set(gcf, 'PaperSize', [5 5]); %Set the paper to have width 5 and height 5.
-saveas(gcf, '../simResults/storageBenifit.pdf', 'pdf') %Save figure
+saveas(gcf, '../simResults/storageBenefitTOU', 'pdf') %Save figure
+
+csvwrite('../simResults/storageSimResultsTOU.csv', storageSimResultDataTOU);
+
         
