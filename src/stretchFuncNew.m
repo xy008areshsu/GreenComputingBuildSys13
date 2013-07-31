@@ -1,4 +1,4 @@
-function [ cost ] = stretchFuncNew( alpha)
+function [ cost ] = stretchFuncNew( alpha, adjustFactor)
 
 %%Model the dishwasher, elasticity
 e = [0 1 0 1 0 0];  % 1 means it is elastic phase, 0 otherwise
@@ -14,7 +14,7 @@ cost = 0;
 GridCost = [6; 6; 6; 6; 6; 6; 6; 6; 10; 10; 10; 10; 9; 
             9; 9; 9; 9; 10; 10; 6; 6; 6; 6; 6];
 beta = mean(GridCost);
-adjustFactor = 6;
+% adjustFactor = 6;
 T = 24;
 
 nonDeferLoad = hardCodedPower('2012-Jul-1.csv', T);
@@ -28,8 +28,11 @@ for k = 1 : T
 end
 
 [~, startTime] = max(GridCost);  % starting time of the load
+% while GridCost(startTime + 1) == GridCost(startTime)
+%     startTime = startTime + 1;
+% end
 
-
+startTime = 11;   %HARD CODE into it!!!!!!!!!!
 % newDelta and newPower
 newDelta = zeros(1, size(originDelta,2));
 newPower = zeros(1, size(originPower, 2));

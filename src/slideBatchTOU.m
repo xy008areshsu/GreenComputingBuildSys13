@@ -22,7 +22,7 @@ period = job(2);
 execTime = job(3);
 powerPerCycle = job(4);
 
-slideDistance = 24 : 24;
+slideDistance = 0 : 24;
 costBenifitForDiffSlideDis = zeros(size(slideDistance, 2), 1);
 jjj = 1;
 

@@ -23,7 +23,7 @@ T = 24;
 
 % Deferable Load Pattern Model
 neededPower = 4;
-deferableLoads;
+deferableLoadsNew;
 i = size(preemptibleLoads);
 numOfPreemptible = i(1);
 i = size(nonPreemptibleLoads);

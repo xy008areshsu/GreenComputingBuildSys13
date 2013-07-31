@@ -71,7 +71,7 @@ alpha = 0.4;
 % Infinite number value, for MILP
 infVal = 10;
 
-slideDis = 5;
+slideDis = 4;
 % period = 8;
 
 %% =========Convert Non Preemptible Loads into Non Deferable Loads=========

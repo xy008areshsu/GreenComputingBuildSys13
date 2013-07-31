@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+
+\bibitem{smartcap}
+S.~Barker, A.~Mishra, D.~Irwin, P.~Shenoy, and J.~Albrecht.
+\newblock Smart{C}ap: Flattening {P}eak {E}lectricity {D}emand in {S}mart
+  {H}omes.
+\newblock In {\em PerCom}, March 2012.
+
+\bibitem{keshav12}
+T.~Carpenter, S.~Singla, P.~Azimzadeh, and S.~Keshav.
+\newblock The {I}mpact of {E}lectricity {P}ricing {S}chemes on {S}torage
+  {A}doption in {O}ntario.
+\newblock In {\em e-Energy}, May 2012.
+
+\bibitem{original}
+B.~Daryanian, R.~Bohn, and R.~Tabors.
+\newblock Optimal {D}emand-side {R}esponse to {E}lectricity {S}pot {P}rices for
+  {S}torage-type {C}ustomers.
+\newblock {\em TPS}, 4(3), August 1989.
+
+\bibitem{nplug}
+T.~Ganu, D.~Seetharam, V.~Arya, R.~Kunnath, J.~Hazra, S.~Husain, L.~DeSilva,
+  and S.~Kalyanaraman.
+\newblock n{P}lug: A {S}mart {P}lug for {A}lleviating {P}eak {L}oads.
+\newblock In {\em e-Energy}, May 2012.
+
+\bibitem{parasol}
+I.~Goiri, W.~Katsak, K.~Le, T.~Nguyen, and R.~Bianchini.
+\newblock Parasol and {G}reen{S}witch: {M}anaging {D}atacenters {P}owered by
+  {R}enewable {E}nergy.
+\newblock In {\em ASPLOS}, March 2013.
+
+\bibitem{krithi-ac}
+G.~Karmakar, A.~Kabra, and K.~Ramakrithnan.
+\newblock Coordinated {S}cheduling of {T}hermostatically {C}ontrolled
+  {R}eal-time {S}ystems under {P}eak {P}ower {C}onstraint.
+\newblock In {\em RTAS}, April 2013.
+
+\bibitem{grid-storage}
+I.~Koutsopoulos, V.~Hatzi, and L.~Tassiulas.
+\newblock {O}ptimal {E}nergy {S}torage {C}ontrol {P}olicies for the {S}mart
+  {P}ower {G}rid.
+\newblock In {\em SmartGridComm}, September 2011.
+
+\bibitem{smartcharge}
+A.~Mishra, D.~Irwin, P.~Shenoy, J.~Kurose, and T.~Zhu.
+\newblock Smart{C}harge: {C}utting the {E}lectricity {B}ill in {S}mart {H}omes
+  with {E}nergy {S}torage.
+\newblock In {\em e-{E}nergy}, May 2012.
+
+\bibitem{greencharge}
+A.~Mishra, D.~Irwin, P.~Shenoy, J.~Kurose, and T.~Zhu.
+\newblock {G}reen{C}harge: Managing {R}enewable {E}nergy in {S}mart {H}omes.
+\newblock {\em JSAC}, 31(7), July 2013.
+
+\bibitem{cloudy-computing}
+N.~Sharma, J.~Gummeson, D.~Irwin, and P.~Shenoy.
+\newblock Cloudy computing: Leveraging weather forecasts in energy harvesting
+  sensor systems.
+\newblock In {\em SECON}, June 2010.
+
+\bibitem{keshav-elastic}
+P.~Srikantha, C.~Rosenberg, and S.~Keshav.
+\newblock An {A}nalysis of {P}eak {D}emand {R}eductions due to {E}lasticity of
+  {D}omestic {A}ppliances.
+\newblock In {\em e-Energy}, May 2012.
+
+\bibitem{culler-smartgridcomm}
+J.~Taneja, P.~Dutta, and D.~Culler.
+\newblock Towards {C}ooperative {G}rids: Sensor/{A}ctuator {N}etworks for
+  {P}romoting {R}enewables.
+\newblock In {\em SmartGridComm}, October 2010.
+
+\bibitem{optimal-price}
+P.~van~de ven, N.~Hegde, L.~Massoulie, and T.~Salonidis.
+\newblock {O}ptimal {C}ontrol of {R}esidential {E}nergy {S}torage {U}nder
+  {P}rice {F}luctuations.
+\newblock In {\em ENERGY}, May 2011.
+
+\bibitem{aamas10}
+P.~Vytelingum, T.~Voice, S.~Ramchurn, A.~Rogers, and N.~Jennings.
+\newblock Agent-based {M}icro-storage {M}anagement for the smart grid.
+\newblock In {\em AAMAS}, May 2010.
+
+\bibitem{buildsys11}
+T.~Zhu, A.~Mishra, D.~Irwin, N.~Sharma, P.~Shenoy, and D.~Towsley.
+\newblock The {C}ase for {E}fficient {R}enewable {E}nergy {M}anagement in
+  {S}mart {H}omes.
+\newblock In {\em BuildSys}, November 2011.
+
+\end{thebibliography}

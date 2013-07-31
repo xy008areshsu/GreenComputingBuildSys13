@@ -16,7 +16,7 @@ mergeData
 sss = size(LoadTotal);
 sss = sss(2);
 price = zeros(3, sss);
-Capa = 10:5:10;
+Capa = 0:5:100;
 costBenifitForDiffCapa = zeros(size(Capa, 2), 1);
 jjj = 1;
 
