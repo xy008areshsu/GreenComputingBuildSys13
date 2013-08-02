@@ -8,6 +8,14 @@ storeRTC = load('../simResults/storageSimResults.csv');
 storeTOU = load('../simResults/storageSimResultsTOU.csv');
 stretchRTC = load('../simResults/stretchSimResults.csv');
 stretchTOU = load('../simResults/stretchSimResultsTOU.csv');
+sellNew = load('../buildsys13-scheduling/graphs/sell/sellSimResultsNew.csv');
+shiftNew = load('../buildsys13-scheduling/graphs/shift/shiftSimResultsNew.csv');
+slideNew = load('../buildsys13-scheduling/graphs/slide/slideSimResultsNew.csv');
+storeNew = load('../buildsys13-scheduling/graphs/store/storageSimResultsNew.csv');
+stretchNew = load('../buildsys13-scheduling/graphs/stretch/stretchSimResultsNew.csv');
+combinedNew = load('../buildsys13-scheduling/graphs/combined/combinedSimResultsNew.csv');
+combinedNewBattGreen = load('../buildsys13-scheduling/graphs/combined/combinedSimResultsNewWithGreenBatt.csv');
+
 
 figure 
 plot(sellRTC(:, 1), sellRTC(:, 2), 'r', 'LineWidth',4);
@@ -20,7 +28,6 @@ legend('RTP', 'TOU')
 set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
 set(gcf, 'PaperSize', [5 5]); %Set the paper to have width 5 and height 5.
 saveas(gcf, '../simResults/sellBenefitCombined', 'pdf') %Save figure
-
 
 figure 
 plot(shiftRTC(:, 1), shiftRTC(:, 2), 'r', 'LineWidth',4);
@@ -76,11 +83,25 @@ TOU = load('benefitTOU');
 combinedRTP = load('combinedBenefitRTC');
 combinedTOU = load('combinedBenefitTOU');
 figure 
-benefits = [combinedTOU combinedRTP TOU RTP];
+benefits = [11 21 21 39 14 87 23 145];
 bar(benefits);
 grid;
-set(gca,'XTickLabel',{'combinedTOU', 'combinedRTP', 'SummedTOU', 'SummedRTP'})
+set(gca,'XTickLabel',{'combinedTOU', 'combinedTOUwithBattGreen', 'combinedRTP', 'combinedRTPwithBattGreen', 'SummedTOU', 'SummedTOUwithBattGreen', 'SummedRTP', 'SummedRTPwithBattGreen'})
 ylabel('Electric Bill Cost Reduction (%)');
+xticklabel_rotate;
 set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
 set(gcf, 'PaperSize', [5 5]); %Set the paper to have width 5 and height 5.
 saveas(gcf, '../simResults/combinedBarGraph', 'pdf') %Save figure
+
+
+figure 
+plot(combinedNew(1, :), combinedNew(2, :), 'r', 'LineWidth',4);
+hold
+plot(combinedNewBattGreen(1, :), combinedNewBattGreen(2, :), 'b', 'LineWidth',4);
+grid
+xlabel('alpha (1x)');
+ylabel('Electric Bill Cost Reduction (%)');
+legend('without Battery and Green', 'with Battery and Green', 'Location','South')
+set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.
+set(gcf, 'PaperSize', [5 5]); %Set the paper to have width 5 and height 5.
+saveas(gcf, '../simResults/CombinedNew', 'pdf') %Save figure

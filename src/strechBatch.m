@@ -1,5 +1,5 @@
 clear; clc; close all
-alphas = 0 : 0.5 : 15;
+alphas = 2 : 0.5 : 2;
 
 minCost = inf(1, size(alphas, 2));
 minAlpha = zeros(1, size(alphas, 2));

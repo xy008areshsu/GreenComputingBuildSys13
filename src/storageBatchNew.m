@@ -60,11 +60,11 @@ for adjustFactor = drange(adjustFactors)
 end
 
 
-storageSimResultDataNew = [adjustFactors costBenefitArr];
+storageSimResultDataNew = [adjustFactors; costBenefitArr];
 
 plot(adjustFactors, costBenefitArr, 'r', 'LineWidth',4);
-title('Average Electric Bill Cost Reduction(%) under New Pricing Plan');
-xlabel('Adjust Factors (1x)');
+% title('Average Electric Bill Cost Reduction(%) under New Pricing Plan');
+xlabel('alpha (1x)');
 ylabel('Cost Reduction (%) ');
 grid
 set(gcf, 'PaperPosition', [0 0 5 5]); %Position plot at left hand corner with width 5 and height 5.

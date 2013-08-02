@@ -52,7 +52,7 @@ execTime = job(3);
 powerPerCycle = job(4);
 
 %in kWh, battery's usable capacity
-BattCapa = 0;  
+BattCapa = 10;  
 
 % battery charging efficiency
 BattE = 0.855; 
@@ -63,7 +63,7 @@ BattE = 0.855;
 % OR USING the FORMULA: E_t = B_t * (1 - CloudCover)
 Green = [0; 0; 0; 0; 0; 0; 0.1; 0.2; 0.8; 1.2; 2.0; 2.5; 2.7; 3.2; 3.0; 
          2.5; 2.3; 1.7; 1.2; 0.5; 0; 0; 0; 0];
- Green = 0 .* Green;
+ Green = 1 .* Green;
  
 % alpha
 alpha = 0.4;
