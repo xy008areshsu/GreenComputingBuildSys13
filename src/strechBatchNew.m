@@ -27,7 +27,7 @@ for adjustFactor = drange(adjustFactors)
 end
     
 % originCost = stretchFuncNew(1, 0);
-costReduction = ((originCost - costArr) ./ originCost) .* 100;
+costReduction = ((originCost - costArr) ./ (originCost + 3)) .* 100;
 
 stretchSimResultDataNew = [adjustFactors' costReduction'];
 

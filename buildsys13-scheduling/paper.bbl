@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{smart-star}
+S.~Barker, A.~Mishra, D.~Irwin, E.~Cecchet, P.~Shenoy, and J.~Albrecht.
+\newblock Smart*: An {O}pen {D}ata {S}et and {T}ools for {E}nabling {R}esearch
+  in {S}ustainable {H}omes.
+\newblock In {\em SustKDD}, August 2012.
+
 \bibitem{smartcap}
 S.~Barker, A.~Mishra, D.~Irwin, P.~Shenoy, and J.~Albrecht.
 \newblock Smart{C}ap: Flattening {P}eak {E}lectricity {D}emand in {S}mart
@@ -17,6 +23,14 @@ B.~Daryanian, R.~Bohn, and R.~Tabors.
 \newblock Optimal {D}emand-side {R}esponse to {E}lectricity {S}pot {P}rices for
   {S}torage-type {C}ustomers.
 \newblock {\em TPS}, 4(3), August 1989.
+
+\bibitem{eia-report2}
+International {E}nergy {O}utlook 2013.
+\newblock Technical report, U.S. Energy Information Administration, July 2013.
+
+\bibitem{ferc2008}
+{S}tate of the {M}arkets {R}eport 2008.
+\newblock Technical report, Federal Energy Regulatory Commission, August 2009.
 
 \bibitem{nplug}
 T.~Ganu, D.~Seetharam, V.~Arya, R.~Kunnath, J.~Hazra, S.~Husain, L.~DeSilva,
@@ -51,13 +65,29 @@ A.~Mishra, D.~Irwin, P.~Shenoy, J.~Kurose, and T.~Zhu.
 \bibitem{greencharge}
 A.~Mishra, D.~Irwin, P.~Shenoy, J.~Kurose, and T.~Zhu.
 \newblock {G}reen{C}harge: Managing {R}enewable {E}nergy in {S}mart {H}omes.
-\newblock {\em JSAC}, 31(7), July 2013.
+\newblock {\em JSAC}, 31(7), 2013.
+
+\bibitem{peakcharge}
+A.~Mishra, D.~Irwin, P.~Shenoy, and T.~Zhu.
+\newblock Scaling {D}istributed {E}nergy {S}torage for {G}rid {P}eak
+  {R}eduction.
+\newblock In {\em e-{E}nergy}, May 2013.
+
+\bibitem{ontario-prices}
+{O}ntario {E}nergy {B}oard: {E}lectricity {P}rices.
+\newblock
+  \url{http://www.ontarioenergyboard.ca/OEB/Consumers/Electricity/Electricity+Prices},
+  2012.
 
 \bibitem{cloudy-computing}
 N.~Sharma, J.~Gummeson, D.~Irwin, and P.~Shenoy.
-\newblock Cloudy computing: Leveraging weather forecasts in energy harvesting
-  sensor systems.
+\newblock Cloudy {C}omputing: Leveraging {W}eather {F}orecasts in {E}nergy
+  {H}arvesting {S}ensor {S}ystems.
 \newblock In {\em SECON}, June 2010.
+
+\bibitem{illinois}
+Smart {G}rid {I}nformation {C}learinghouse: {L}egislation and {R}egulation.
+\newblock \url{http://www.sgiclearinghouse.org/Legislation?q=node/1705}, 2011.
 
 \bibitem{keshav-elastic}
 P.~Srikantha, C.~Rosenberg, and S.~Keshav.
@@ -71,6 +101,11 @@ J.~Taneja, P.~Dutta, and D.~Culler.
   {P}romoting {R}enewables.
 \newblock In {\em SmartGridComm}, October 2010.
 
+\bibitem{flexible}
+J.~Taneja, K.~Lutz, and D.~Culler.
+\newblock Flexible {L}oads in {F}uture {E}nergy {N}etworks.
+\newblock In {\em e-Energy (poster)}, May 2013.
+
 \bibitem{optimal-price}
 P.~van~de ven, N.~Hegde, L.~Massoulie, and T.~Salonidis.
 \newblock {O}ptimal {C}ontrol of {R}esidential {E}nergy {S}torage {U}nder
@@ -79,8 +114,14 @@ P.~van~de ven, N.~Hegde, L.~Massoulie, and T.~Salonidis.
 
 \bibitem{aamas10}
 P.~Vytelingum, T.~Voice, S.~Ramchurn, A.~Rogers, and N.~Jennings.
-\newblock Agent-based {M}icro-storage {M}anagement for the smart grid.
+\newblock Agent-based {M}icro-storage {M}anagement for the {S}mart {G}rid.
 \newblock In {\em AAMAS}, May 2010.
+
+\bibitem{iccps}
+T.~Zhu, Z.~Huang, A.~Sharma, J.~Su, D.~Irwin, A.~Mishra, D.~Menasche, and
+  P.~Shenoy.
+\newblock Sharing {R}enewable {E}nergy in {S}mart {M}icrogrids.
+\newblock In {\em ICCPS}, April 2013.
 
 \bibitem{buildsys11}
 T.~Zhu, A.~Mishra, D.~Irwin, N.~Sharma, P.~Shenoy, and D.~Towsley.

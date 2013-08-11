@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.1)  30 JUL 2013 15:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.1)  5 AUG 2013 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,18 +397,21 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Warning: No \author given.
 
 (./abstract.tex) (./introduction.tex
-<graphs/rate_plans/rate.pdf, id=1, 361.35pt x 201.75375pt>
-File: graphs/rate_plans/rate.pdf Graphic file (type pdf)
+Underfull \vbox (badness 4024) has occurred while \output is active []
 
-<use graphs/rate_plans/rate.pdf>
-Package pdftex.def Info: graphs/rate_plans/rate.pdf used on input line 11.
-(pdftex.def)             Requested size: 227.64894pt x 127.10553pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./related.tex [2 <./graphs/rate_plans/rate.pdf>]
+]
+<graphs/rate_plans/rate.pdf, id=10, 361.35pt x 201.75375pt>
+File: graphs/rate_plans/rate.pdf Graphic file (type pdf)
+
+<use graphs/rate_plans/rate.pdf>
+Package pdftex.def Info: graphs/rate_plans/rate.pdf used on input line 9.
+(pdftex.def)             Requested size: 227.64894pt x 127.10553pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+) (./related.tex [2 <./graphs/rate_plans/rate.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
@@ -418,89 +421,204 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
+) (./table.tex
+Overfull \hbox (4.31725pt too wide) in paragraph at lines 4--27
+ [] 
+ []
 
-! LaTeX Error: File `table.tex' not found.
+) <graphs/shift/shiftBenefitCombined.pdf, id=19, 361.35pt x 361.35pt>
+File: graphs/shift/shiftBenefitCombined.pdf Graphic file (type pdf)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: 
-
-LaTeX Warning: Reference `table:parameters' on page 3 undefined on input line 1
-3.
-
-[3]) (./evaluation.tex
-<graphs/shiftBenefitCombined.pdf, id=26, 361.35pt x 361.35pt>
-File: graphs/shiftBenefitCombined.pdf Graphic file (type pdf)
-
-<use graphs/shiftBenefitCombined.pdf>
-Package pdftex.def Info: graphs/shiftBenefitCombined.pdf used on input line 30.
-
+<use graphs/shift/shiftBenefitCombined.pdf>
+Package pdftex.def Info: graphs/shift/shiftBenefitCombined.pdf used on input li
+ne 18.
 (pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
 
-<graphs/slideBenefitCombined.pdf, id=27, 361.35pt x 361.35pt>
-File: graphs/slideBenefitCombined.pdf Graphic file (type pdf)
+<graphs/slide/slideBenefitCombined.pdf, id=20, 361.35pt x 361.35pt>
+File: graphs/slide/slideBenefitCombined.pdf Graphic file (type pdf)
 
-<use graphs/slideBenefitCombined.pdf>
-Package pdftex.def Info: graphs/slideBenefitCombined.pdf used on input line 31.
-
+<use graphs/slide/slideBenefitCombined.pdf>
+Package pdftex.def Info: graphs/slide/slideBenefitCombined.pdf used on input li
+ne 19.
 (pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
 
-<graphs/stretchBenefitCombined.pdf, id=28, 361.35pt x 361.35pt>
-File: graphs/stretchBenefitCombined.pdf Graphic file (type pdf)
+<graphs/stretch/stretchBenefitCombined.pdf, id=21, 361.35pt x 361.35pt>
+File: graphs/stretch/stretchBenefitCombined.pdf Graphic file (type pdf)
 
-<use graphs/stretchBenefitCombined.pdf>
-Package pdftex.def Info: graphs/stretchBenefitCombined.pdf used on input line 3
-2.
+<use graphs/stretch/stretchBenefitCombined.pdf>
+Package pdftex.def Info: graphs/stretch/stretchBenefitCombined.pdf used on inpu
+t line 20.
 (pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
 
-Overfull \hbox (30.94388pt too wide) in paragraph at lines 29--36
+<graphs/store/storeBenefitCombined.pdf, id=22, 361.35pt x 361.35pt>
+File: graphs/store/storeBenefitCombined.pdf Graphic file (type pdf)
+
+<use graphs/store/storeBenefitCombined.pdf>
+Package pdftex.def Info: graphs/store/storeBenefitCombined.pdf used on input li
+ne 22.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/sell/sellBenefitCombined.pdf, id=23, 361.35pt x 361.35pt>
+File: graphs/sell/sellBenefitCombined.pdf Graphic file (type pdf)
+
+<use graphs/sell/sellBenefitCombined.pdf>
+Package pdftex.def Info: graphs/sell/sellBenefitCombined.pdf used on input line
+ 23.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/combined/combinedBarGraph.pdf, id=24, 361.35pt x 361.35pt>
+File: graphs/combined/combinedBarGraph.pdf Graphic file (type pdf)
+
+<use graphs/combined/combinedBarGraph.pdf>
+Package pdftex.def Info: graphs/combined/combinedBarGraph.pdf used on input lin
+e 24.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+Overfull \hbox (30.94388pt too wide) in paragraph at lines 17--28
  [][] 
  []
 
-<graphs/storeBenefitCombined.pdf, id=29, 361.35pt x 361.35pt>
-File: graphs/storeBenefitCombined.pdf Graphic file (type pdf)
+[3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use graphs/storeBenefitCombined.pdf>
-Package pdftex.def Info: graphs/storeBenefitCombined.pdf used on input line 44.
+ [4 <./graphs/shift/shiftBenefitCombined.pdf> <./graphs/slide/slideBenefitCombi
+ned.pdf> <./graphs/stretch/stretchBenefitCombined.pdf> <./graphs/store/storeBen
+efitCombined.pdf> <./graphs/sell/sellBenefitCombined.pdf> <./graphs/combined/co
+mbinedBarGraph.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+) (./pricing.tex
+<graphs/new_plan/data-reverse.pdf, id=54, 722.7pt x 542.025pt>
+File: graphs/new_plan/data-reverse.pdf Graphic file (type pdf)
+
+<use graphs/new_plan/data-reverse.pdf>
+Package pdftex.def Info: graphs/new_plan/data-reverse.pdf used on input line 3.
+
+(pdftex.def)             Requested size: 252.93776pt x 156.48848pt.
+
+Overfull \hbox (11.91737pt too wide) in paragraph at lines 3--4
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 6.
+
+Underfull \hbox (badness 3815) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/10 The pre-vi-ous sec-tion's re-sults demon-strate ex-ist-ing
+ []
+
+[5 <./graphs/new_plan/data-reverse.pdf>]
+<graphs/solar/solar.pdf, id=68, 361.35pt x 201.75375pt>
+File: graphs/solar/solar.pdf Graphic file (type pdf)
+
+<use graphs/solar/solar.pdf>
+Package pdftex.def Info: graphs/solar/solar.pdf used on input line 23.
+(pdftex.def)             Requested size: 227.64894pt x 127.10553pt.
+
+<graphs/shift/shiftBenefitNew.pdf, id=69, 361.35pt x 361.35pt>
+File: graphs/shift/shiftBenefitNew.pdf Graphic file (type pdf)
+
+<use graphs/shift/shiftBenefitNew.pdf>
+Package pdftex.def Info: graphs/shift/shiftBenefitNew.pdf used on input line 38
+.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/slide/slideBenefitNew.pdf, id=70, 361.35pt x 361.35pt>
+File: graphs/slide/slideBenefitNew.pdf Graphic file (type pdf)
+
+<use graphs/slide/slideBenefitNew.pdf>
+Package pdftex.def Info: graphs/slide/slideBenefitNew.pdf used on input line 39
+.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/stretch/stretchBenefitNew.pdf, id=71, 361.35pt x 361.35pt>
+File: graphs/stretch/stretchBenefitNew.pdf Graphic file (type pdf)
+
+<use graphs/stretch/stretchBenefitNew.pdf>
+Package pdftex.def Info: graphs/stretch/stretchBenefitNew.pdf used on input lin
+e 40.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/store/storageBenefitNew.pdf, id=72, 361.35pt x 361.35pt>
+File: graphs/store/storageBenefitNew.pdf Graphic file (type pdf)
+
+<use graphs/store/storageBenefitNew.pdf>
+Package pdftex.def Info: graphs/store/storageBenefitNew.pdf used on input line 
+42.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/sell/sellBenefitNew.pdf, id=73, 361.35pt x 361.35pt>
+File: graphs/sell/sellBenefitNew.pdf Graphic file (type pdf)
+
+<use graphs/sell/sellBenefitNew.pdf>
+Package pdftex.def Info: graphs/sell/sellBenefitNew.pdf used on input line 43.
+(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
+
+<graphs/combined/CombinedNew.pdf, id=74, 361.35pt x 361.35pt>
+File: graphs/combined/CombinedNew.pdf Graphic file (type pdf)
+
+<use graphs/combined/CombinedNew.pdf>
+Package pdftex.def Info: graphs/combined/CombinedNew.pdf used on input line 44.
 
 (pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
 
-<graphs/sellBenefitCombined.pdf, id=30, 361.35pt x 361.35pt>
-File: graphs/sellBenefitCombined.pdf Graphic file (type pdf)
+Overfull \hbox (30.94388pt too wide) in paragraph at lines 37--48
+ [][] 
+ []
 
-<use graphs/sellBenefitCombined.pdf>
-Package pdftex.def Info: graphs/sellBenefitCombined.pdf used on input line 45.
-(pdftex.def)             Requested size: 166.94463pt x 166.94531pt.
-) (./conclusion.tex) (./paper.bbl) [4]
-[5 <./graphs/shiftBenefitCombined.pdf> <./graphs/slideBenefitCombined.pdf> <./g
-raphs/stretchBenefitCombined.pdf> <./graphs/storeBenefitCombined.pdf> <./graphs
-/sellBenefitCombined.pdf>] (./paper.aux)
+[6 <./graphs/solar/solar.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: There were undefined references.
+)
+(./evaluation2.tex [7 <./graphs/shift/shiftBenefitNew.pdf> <./graphs/slide/slid
+eBenefitNew.pdf> <./graphs/stretch/stretchBenefitNew.pdf> <./graphs/store/stora
+geBenefitNew.pdf> <./graphs/sell/sellBenefitNew.pdf> <./graphs/combined/Combine
+dNew.pdf>]) (./conclusion.tex) (./paper.bbl
+Underfull \hbox (badness 7981) in paragraph at lines 77--81
+[]\OT1/ptm/m/n/8 Ontario En-ergy Board: Elec-tric-ity Prices.  $\OT1/pcr/m/n/8 
+http : / / www .
+ []
 
- ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+\OT1/pcr/m/n/8 ontarioenergyboard . ca / OEB / Consumers / Electricity /
+ []
+
+
+Underfull \hbox (badness 3281) in paragraph at lines 89--91
+[]\OT1/ptm/m/n/8 Smart Grid In-for-ma-tion Clear-ing-house: Leg-is-la-tion and 
+Reg-
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 121--125
+[]\OT1/ptm/m/n/8 T. Zhu, Z. Huang, A. Sharma, J. Su, D. Ir-win, A. Mishra,
+ []
+
+) [8] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3112 strings out of 495059
- 43198 string characters out of 3182031
- 103640 words of memory out of 3000000
- 6205 multiletter control sequences out of 15000+200000
- 37133 words of font info for 75 fonts, out of 3000000 for 9000
+ 3204 strings out of 495059
+ 45370 string characters out of 3182031
+ 104694 words of memory out of 3000000
+ 6271 multiletter control sequences out of 15000+200000
+ 45189 words of font info for 93 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,17n,23p,1590b,304s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
-mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (5 pages, 117049 bytes).
+ 38i,17n,23p,1959b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (8 pages, 221920 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

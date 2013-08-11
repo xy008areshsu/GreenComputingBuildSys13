@@ -1,0 +1,107 @@
+\relax 
+\citation{eia-report2}
+\citation{ferc2008}
+\citation{ontario-prices}
+\citation{illinois}
+\citation{smartcap}
+\citation{keshav12}
+\citation{nplug}
+\citation{krithi-ac}
+\citation{smartcharge}
+\citation{greencharge}
+\citation{keshav-elastic}
+\citation{culler-smartgridcomm}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\newlabel{sec:introduction}{{1}{1}}
+\citation{smartcap}
+\citation{culler-smartgridcomm}
+\citation{culler-smartgridcomm}
+\citation{nplug}
+\citation{smartcap}
+\citation{krithi-ac}
+\citation{culler-smartgridcomm}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Examples of how electricity rates vary under time-of-use (TOU) and real-time pricing (RTP).}}{2}}
+\newlabel{fig:pricing}{{1}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}}
+\newlabel{sec:related}{{2}{2}}
+\citation{keshav-elastic}
+\citation{keshav-elastic}
+\citation{keshav12}
+\citation{original}
+\citation{grid-storage}
+\citation{smartcharge}
+\citation{optimal-price}
+\citation{aamas10}
+\citation{keshav12}
+\citation{smartcharge}
+\citation{greencharge}
+\citation{culler-smartgridcomm}
+\citation{buildsys11}
+\citation{parasol}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Combined Load Scheduling}{3}}
+\newlabel{sec:scheduling}{{3}{3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameter definitions for linear program.}}{3}}
+\newlabel{table:parameters}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Joint Optimization}{3}}
+\newlabel{c1}{{1}{3}}
+\newlabel{c2}{{2}{3}}
+\newlabel{c3}{{3}{3}}
+\newlabel{c4}{{4}{3}}
+\newlabel{c5}{{5}{3}}
+\newlabel{c6}{{6}{3}}
+\newlabel{c7}{{7}{3}}
+\newlabel{c8}{{8}{3}}
+\newlabel{c9}{{9}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Cost savings from optimizing each degree of scheduling freedom (shifting, sliding, stretching, storing, and selling) for electric loads in isolation ((a)-(e)), and in combination (f) within reasonable limits.}}{4}}
+\newlabel{fig:oldplan}{{2}{4}}
+\newlabel{c10}{{10}{4}}
+\citation{smart-star}
+\citation{smartcharge}
+\citation{cloudy-computing}
+\citation{flexible}
+\citation{keshav-elastic}
+\citation{smartcharge}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Scheduling's Benefits}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Flat-power pricing charges consumers \$$\beta $ per kWh for power usage less than a consumer-specific target (in blue) and \$$(1+\alpha )\beta $ for usage above the target (in red).}}{5}}
+\newlabel{fig:newpricing}{{3}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Flat-power Pricing}{5}}
+\newlabel{sec:pricing}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Advantages}{5}}
+\citation{peakcharge}
+\citation{smart-star}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Power generation from a 10kW roof-top home solar installation varies widely minute-to-minute.}}{6}}
+\newlabel{fig:solar}{{4}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Discussion}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Cost savings from optimizing each degree of scheduling freedom(shifting, sliding, stretching, storing, selling and in combination) under Flat-power pricing within reasonable limits.}}{7}}
+\newlabel{fig:newplan}{{5}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation}{7}}
+\newlabel{sec:evaluation}{{5}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Assumptions}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Discussion}{7}}
+\bibstyle{abbrv}
+\bibdata{paper}
+\bibcite{smart-star}{1}
+\bibcite{smartcap}{2}
+\bibcite{keshav12}{3}
+\bibcite{original}{4}
+\bibcite{eia-report2}{5}
+\bibcite{ferc2008}{6}
+\bibcite{nplug}{7}
+\bibcite{parasol}{8}
+\bibcite{krithi-ac}{9}
+\bibcite{grid-storage}{10}
+\bibcite{smartcharge}{11}
+\bibcite{greencharge}{12}
+\bibcite{peakcharge}{13}
+\bibcite{ontario-prices}{14}
+\bibcite{cloudy-computing}{15}
+\bibcite{illinois}{16}
+\bibcite{keshav-elastic}{17}
+\bibcite{culler-smartgridcomm}{18}
+\bibcite{flexible}{19}
+\bibcite{optimal-price}{20}
+\bibcite{aamas10}{21}
+\bibcite{buildsys11}{22}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{8}}
+\newlabel{sec:conclusion}{{6}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}References}{8}}

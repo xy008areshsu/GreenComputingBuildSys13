@@ -1,0 +1,32 @@
+\begin{table}[t]
+\small
+\begin{center}
+\begin{tabular}{||l|l||}
+\hline
+{\em Parameter} & {\em Definition}\\
+\hline
+\hline
+%%$I$ & Length of each $T$\\ \hline
+$T$ & Time in $T$ discrete intervals 1 to $T$\\ \hline
+$p_i$ & Home power demand in interval $i$\\ \hline
+$\vec{L_{slide}}$ & Vector of tuples for slide load schedules\\ \hline
+$\vec{L_{shift}}$ & Vector of tuples for shiftable load schedules\\ \hline
+$g_i$ & Renewable generation (kWh) in interval $i$\\ \hline
+$\alpha$ & Percentage of cost paid for net metering\\ \hline
+$C$ & Battery capacity in kWh\\ \hline
+$e$ & Battery efficiency, $\le$1\\ \hline
+$m_i$ & Electricity cost in interval $i$\\ \hline \hline
+$L_{green}$ & Demand satisfied by renewables\\ \hline
+$L_{grid}$ & Demand satisfied by grid\\ \hline
+$L_{battery}$ & Demand satisfied by battery\\ \hline
+$B_{green}$ & Renewable energy charged to battery\\ \hline
+$B_{grid}$ & Grid power used to charge battery\\ \hline
+$N_{green}$ & Renewable energy net metered to grid\\ \hline
+$P_{grid}$ & Power used from the grid\\ \hline
+\end{tabular}
+\end{center}
+\vspace{0.15cm}
+\caption{Parameter definitions for linear program.}
+\label{table:parameters}
+\vspace{-0.5cm}
+\end{table}

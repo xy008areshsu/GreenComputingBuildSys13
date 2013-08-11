@@ -1,0 +1,244 @@
+%Outline: 
+%Section 1 - Introduction - 1.5 pages
+%Section 2 - Load Scheduling Background - 1 page
+%Section 3 - Combined Scheduling - Benefits - 2 pages
+%Section 4  - Flat-power Pricing - 1 page
+%Section 5 - Evaluation - 2 pages
+% Section 7: Conclusion - 0.5 page
+
+The prior research described in \Section\ref{sec:related} focuses on optimizing different dimensions of scheduling freedom in isolation.  In this paper, we want to examine the performance of jointly optimizing scheduling for all types of loads, e.g., shiftable, stretchable, slidable, etc., to quantify the maximum potential benefits from advanced load scheduling.  As in prior work, we formulate our combined scheduling problem as a mixed integer linear program (MILP).  In particular, we extend the MILP used in Parasol~\cite{parasol}:  a solar-powered micro-data center that schedules batch jobs with well-known running times and deadlines.   As with our MILP, Parasol's objective is to minimize electricity costs under TOU/RTP rate plans and maximize the use of solar power, albeit for a data center instead of a home.  While Parasol accounts for energy storage, net metering, and slide loads (which are akin to batch jobs), we extend our MILP to schedule shiftable and stretchable loads.  Of course, our work also differs from Parasol, since a home is substantially different than a data center in terms of its users, workloads, devices, and scheduling freedom.
+
+\subsection{Joint Optimization}
+
+\input{table}
+
+\begin{figure*}[t]
+\centering
+\begin{tabular}{ccc}
+\includegraphics[width=0.33\textwidth]{graphs/shift/shiftBenefitCombined.pdf} &
+\includegraphics[width=0.33\textwidth]{graphs/slide/slideBenefitCombined.pdf} &
+\includegraphics[width=0.33\textwidth]{graphs/stretch/stretchBenefitCombined.pdf}\\
+(a) Shift & (b) Slide & (c) Stretch\\
+\includegraphics[width=0.33\textwidth]{graphs/store/storeBenefitCombined.pdf} &
+\includegraphics[width=0.33\textwidth]{graphs/sell/sellBenefitCombined.pdf} &
+\includegraphics[width=0.33\textwidth]{graphs/combined/combinedBarGraph.pdf}\\
+(d) Store & (e) Sell & (f) Combined\\
+\end{tabular}
+\vspace{0.5cm}
+\caption{Cost savings from optimizing each degree of scheduling freedom (shifting, sliding, stretching, storing, and selling) for electric loads in isolation ((a)-(e)), and in combination (f) within reasonable limits.}
+\label{fig:oldplan}
+%\vspace{-0.15cm}
+\end{figure*}
+
+Our MILP uses the parameters listed in Table~\ref{table:parameters}.   We model both $\vec{L_{shift}[power]}$ and $\vec{L_{slide}[power]}$ as vectors of tuples that specify each load's start time, running time, and power usage.  We assume slide loads also have a completion deadline.  We then divide each day into $T$ discrete intervals of length $l$ from 1 to $T$ with the objective of minimizing $\sum_{i=0}^{T} (m_i*P^{i}_{grid} - \alpha*m_i*N^{i}_{green}$) each day, i.e., the net bill after any net metering, given the following constraints.
+\vspace{-0.4cm}
+
+\begin{equation}
+%% Total charge rate cannot be higher than the battery capacity divided by 4.
+\label{c1}
+\forall i \in T, B_{green} + B_{grid} \le \frac{C}{4}
+\vspace{-0.4cm}
+\end{equation}
+
+%% Power discharged from the battery is never greater than the power charged to the battery
+\begin{equation}
+\label{c2}
+\sum_{i=0}^{T} L_{battery} - e*\sum_{i=0}^{T} (B_{green}+B_{grid}) \le 0
+\vspace{-0.4cm}
+\end{equation}
+
+%% Energy stored in the battery cannot be greater than its capacity
+\begin{equation}
+\label{c3}
+\sum_{i=0}^{T} B^{i}_{green} + \sum_{i=0}^{T} B^{i}_{grid} - \frac{\sum_{i=0}^{T} L_{battery}}{e} \le C
+\vspace{-0.4cm}
+\end{equation}
+
+%% Cannot use batteries and do net metering at the same time.
+\begin{equation}
+\label{c4}
+\forall i \in {T | L^{i}_{battery} > 0}, N_{green} = 0
+\vspace{-0.4cm}
+\end{equation}
+
+%% Cannot charge and discharge the batteries at the same time
+\begin{equation}
+\label{c5}
+\forall i \in \{T | L^{i}_{battery} > 0\}, B^{i}_{green} + B^{i}_{grid} = 0 
+\vspace{-0.4cm}
+\end{equation}
+
+%% Can use renewables to charge the battery
+\begin{equation}
+\label{c6}
+\forall i \in T, L^{i}_{green} + B^{i}_{green} + N^{i}_{green} \le g_i
+\vspace{-0.4cm}
+\end{equation}
+
+%% Can use renewables to net meter
+\begin{equation}
+\label{c7}
+\forall i \in T, L^{i}_{grid} + B^{i}_{grid} = P^{i}_{grid}
+\vspace{-0.4cm}
+\end{equation}
+
+%% Cannot power loads and net meter at the same time
+\begin{equation}
+\label{c8}
+\forall i \in \{T | L^{i}_{grid} > 0\}, N^{i}_{green} = 0
+\vspace{-0.4cm}
+\end{equation}
+
+%% All workloads should be powered by one of three energy sources
+\begin{equation}
+\label{c9}
+\begin{split}
+\forall i \in T, L^{i}_{battery} + L^{i}_{grid} + L_{green}\\
+=L_{i} - \vec{L^{i}_{slide}[power]} - \vec{L^{i}_{shift}[power]}
+\end{split}
+\vspace{-0.4cm}
+\end{equation}
+
+%% Shiftable loads: power must be the same each period
+\begin{equation}
+\label{c10}
+\begin{split}
+\forall \vec{L^{i}_{shift}}, \forall i \in \frac{T}{L^{i}_{shift}[period]}, \sum L^{i}_{shift}[power]\\
+=L_{shift}[power]
+\end{split}
+\end{equation}
+
+Briefly, the constraints ensure the following invariants:  (1) the battery's charging rate is not more than its capacity divided by 4, i.e., a C/4 charge rate; (2) the energy charged to the battery never exceeds the energy discharged from it; (3) the energy stored in the battery never exceeds its capacity; (4) net metering and battery charging do not occur simultaneously; (5) battery charging and discharging do not occur simultaneously; (6) renewables can charge the battery; (7)  renewables can be net metered; (8) 
+consuming grid power and net metering cannot occur simultaneously; (9) every load is powered by only one energy source; (10) the amount of power shiftable loads consume per period is constant.
+
+Constraints (4), (5), and (8) are non-linear mutual exclusion constraints. We convert these to linear constraints by introducing a binary variable $b \in \{0,1\}$ and replacing each non-linear mutual exclusion constraint with five linear constraints that enforce the same invariant.  In this case, we replace any constraint of the form $\forall i \in \{T | x>0\}, y = 0$ with $x-\infty*b \le 0$, $-\infty*x + b \le 0$, $y+\infty*b \le \infty$, $x \ge 0$, and $y \ge 0$. In addition, since neither slidable load nor stretchable loads map well to linear constraints, we use brute-force methods to determine an optimal schedule.  For each slide load each day, we simply run the MILP multiple times for each possible start time of the slide load and then use minimum cost schedule.  Of course, as the number of slide loads increases, we must run the MILP for each possible combination of start times, which increases exponentially as the number of slide loads increases.  However, the approach is computationally tractable in practice, since the number of slide loads is typically small, e.g., usually three or less, and they do not run everyday.  Likewise, for each stretchable load each day, we run the MILP for each possible stretched duration.  
+
+\subsection{Scheduling's Benefits}
+
+The purpose of our MILP is to quantify the cost savings from optimizing each dimension of scheduling freedom, both in isolation and in combination over a 60-day period in a representative home for both the TOU and RTP pricing plans depicted in Figure~\ref{fig:pricing}.  In this case, we use data from Home-A in the Smart* dataset~\cite{smart-star}. Since we use the same RTP prices from Figure~\ref{fig:pricing} each day, our RTP plan has significantly more opportunity to lower costs by scheduling loads than a real RTP plan.  Thus, our RTP plan represents a rough upper-bound on the size of the price differential between the lowest-cost and highest-cost periods. In our experiments, we run our MILP at the beginning of each day with $T=24$, assuming that we know home's power demand $p_i$, renewable generation $g_i$, and the electricity cost each interval.  In practice, the scheduler would require predictions for these parameters~\cite{smartcharge,cloudy-computing}.  Thus, our results also represent an upper-bound on the cost savings due to scheduling. 
+
+Figure~\ref{fig:oldplan} shows the extent to which optimizing each degree of scheduling freedom lowers Home-A's electricity bill.  In this case, the primary shiftable load in the home is an air conditioner that on average consumes 13kWh per day and has a two hour duty cycle, such that it is on for 33\% of each cycle.  The primary slidable and stretchable loads include a dryer, washing machine, and dishwasher.   For each graph (a)-(e), the $y$-axis shows the percentage cost savings from scheduling each type of load in isolation, and the $x$-axis represents the degree of scheduling freedom for each load.  In this case, the duty cycle length for shiftable loads, the maximum delay for slidable loads, the stretch factor (as a multiple of the original running time) for stretchable loads, the battery capacity for energy storage, and the amount of renewable energy available to sell through net metering.  For renewables, the $x$-axis represents a multiplicative factor applied to a solar trace sized that provides 50\% of the home's average power. For example, two on the $x$-axis represents a trace that provides 100\% of the home's power.  
+
+As expected, as the scheduling freedom increases, so do the savings. Unfortunately, practical values in each case are generally low, with each offering less than a 10\% reduction in costs even with the extreme RTP pricing.  For example, as the length of the duty cycle for shiftable loads increases, the scheduler has more freedom to shift power usage long periods of time without violating the constraint that energy usage within a duty cycle must be constant.  In practice, though, common shiftable loads, such as refrigerators, freezers, heaters, and air conditioners, have duty cycles of only a few hours or less, which results in savings of less than 10\%.  Significantly increasing the duty cycle for these loads is not possible without redesigning them to incorporate some form of energy storage, e.g., such as thermal storage~\cite{flexible}.  Similarly, while slide loads significantly reduce costs if deferred multiple hours into the future (to low cost nighttime periods), such long delays impose a significant burden on users. Likewise, stretching loads only provides significant savings for unrealistically large stretch factors, e.g., $>3x$, that are greater than the 10\% assumed in prior work~\cite{keshav-elastic}. 
+
+While energy storage and renewable energy do lower electric bills, they both require a massive capital investment that generally negates any savings.  For example, recent work estimates that each kWh of usable energy storage costs \$118 per year to install and maintain~\cite{smartcharge}. Finally, Figure~\ref{fig:oldplan}(f) shows the combined benefits from jointly optimizing the scheduling for each type of load for ``reasonable" values for the scheduling freedom, and then compares it to the sum of benefits from optimizing each load in isolation. In this case, we chose a two-hour duty cycle for the shiftable loads, four hours for the delay time, and 2x for the stretch factor with no battery capacity and renewable energy (due to the capital costs).   The combination is actually less than the sum, since optimizing one degree of freedom may prevent optimizations using another.  Overall, the results show that advanced load scheduling offers at most 20\% savings in the extreme RTP case and 11\% in the more common TOU case, and, since many of our assumptions are conservative, likely much less in practice.  If we add in 10kWh of energy storage capacity and 1x of solar generation, the savings do improve to 40\% and 25\% in the TOU and RTP cases, respectively, without accounting for capital costs.   
+
+
+
+%Figure 2(f) uses a set of parameters as follows: AC energy used one day is 13 kwh, duty cycle 2 hours, running time at each duty cycle is 2/3 hours; Dishwasher's elasticity profile is same as in assumption 5, but the slide distance is 4 hours, the stretch factor is 2. The battery capacity is 10 kwh. It shows that the combined benefit would be lower than the individual benefit summed up. This is because when combining all the scheduling together, there are additional constraints that must be satisfied. For example, We cannot use the batteries and do net metering at the same time.
+
+
+
+
+%, and likely less than 11\% using the more common TOU plans in practice. 
+
+
+
+%% and only offers 11\% savings using the TOU plan and 20\% using the RTP plan.  Thus, 
+
+% is an air conditioner with a power usage of XXW when on, and average duty cycle where it is on XX minutes out of every XX.  The primary slidable load is the dishwasher, with a maximum power usage of XXW and a running time of XX minutes, since it runs more often than the dryer and washing machine.
+
+%shows the percentage cost savings from scheduling only shiftable loads (a), slidable loads (b), and stretchable loads (c) in isolation. In each case, the $x$-axis represents the degree of scheduling freedom for each load. 
+
+
+
+
+% 
+%% Say we use the SmartHome data set. 
+
+
+%and (11) slide loads cannot run past their deadline.  
+
+%run the MILP for each possible 
+%perform a linear search 
+% Finally, ensuring slide loads complete within their deadline does also not map well to a linear constraint. Thus, for a given slide load each day, we simply run the MILP $T/i$ times for each possible start time of the slide load and then use minimum cost schedule.  Of course, as the number of slide loads increases, we must run the MILP for each possible combination of start times.  However, the approach is tractable, since the number of slide loads is typically small, e.g., usually three or less, and they often do not run everyday.
+
+%XXX Need to say something about stretchable loads
+
+%%  The home has three slide loads (a dryer, a washing machine, and a dishwasher), four shfitable loads (a refrigerator and four 
+
+
+%
+%\begin{figure*}[t]
+%\centering
+%\begin{tabular}{ccc}
+%\includegraphics[width=0.33\textwidth]{graphs/shiftBenefitCombined.pdf} &
+%\includegraphics[width=0.33\textwidth]{graphs/slideBenefitCombined.pdf} &
+%\includegraphics[width=0.33\textwidth]{graphs/stretchBenefitCombined.pdf}\\
+%(a) Shift & (b) Slide & (c) Stretch 
+%\end{tabular}
+%\vspace{0.2cm}
+%\caption{Cost savings from scheduling shiftable, slidable, and stretchable loads as scheduling freedom increases.}
+%\label{fig:isolation}
+%\vspace{-0.4cm}
+%\end{figure*}
+%
+%\begin{figure*}[t]
+%\centering
+%\begin{tabular}{cc}
+%\includegraphics[width=0.33\textwidth]{graphs/storeBenefitCombined.pdf} &
+%\includegraphics[width=0.33\textwidth]{graphs/sellBenefitCombined.pdf}\\
+%(a) Store & (b) Sell
+%\end{tabular}
+%\vspace{0.2cm}
+%\caption{Cost savings from using energy storage and net metering, as capacity and renewable generation increases.}
+%\label{fig:isolation2}
+%\vspace{-0.4cm}
+%\end{figure*}
+%
+
+
+
+
+
+
+%%In this case, our objective function is to minimize a consumer's electricity bill under TOU/RTP pricing plans.  
+
+% We assume we know schedules of slide and shift loads in advance
+
+% Slide Loads: period, deadline, running time, power usage per period
+
+%
+%
+%for each start time of the slide load
+%
+%
+%
+%
+%
+%
+%Since some of the constraints above are non-linear, 
+%
+%(5),(4),(8)
+%
+%
+%
+%
+%
+%
+%We then denote the power charged to the battery during interval $i$ as $s_i$, the power discharged from the battery as $d_i$, and the power consumed from the grid as $p_i$.   We combine both the battery array and inverter inefficiency into a single inefficiency parameter $e$.  Finally, we specify the cost per kWh over the $i$th interval as $c_i$, and the amount billed as $m_i$.   F
+%
+%
+%
+%Table~\ref{table:parameters} lists the parameters in our MILP, where the first seven parameters are properties of the home and the MILP determines the value of the last seven parameters.  In practice, solving this MILP requires predictions of a home's power demand, renewable generation, and possibly electricity prices (for RTP), since these values are not known in advance. For this work, we assume perfect future knowledge.  Thus, our results represent an upper bound on performance.  
+%
+%
+%
+%
+%Predictor to pre dice energy production.
+%
+%Solver: outputs a workload schedule and an energy source schedule.  (runs every XX minutes).
+%
+%Configurer: effects the changes.  Battery, Grid
+%
+%
+
+%home electric loads are substantially different than a data center's workload.
+
+%Papers in the previous work look at things in isolation.  We combine them.  Inspired by Parasol, which does something similar for computing loads in a solar-powered data center.  Home loads are a little different; have different degrees of scheduling freedom, but may have more limitations.  We use a linear program below to do the scheduling.
+
+%
+%
+%Given the constraints above, \vspace{-0.2cm}
+%
+%The first and second constraint ensure the energy charged to, or discharged from, the battery is non-negative. The third constraint limits the battery's maximum charging rate. The fourth constraint specifies that the power discharged from the battery is never greater than the power charged to the battery multiplied by the inefficiency parameter.  The fifth constraint states that the energy stored in the battery array, which is the difference between the energy charged to  or discharged from the battery over the previous time intervals, cannot be greater than its capacity. Finally, the sixth constraint defines the price the home pays for energy during the $i$th interval.  The objective and constraints define a linearly constrained optimization problem that is solvable using standard linear programming techniques.  SmartCharge solves the problem at the beginning of each day to determine when to switch between grid and battery power.  Since the approach uses knowledge of next-day consumption patterns, we next detail statistical machine learning techniques for predicting next-day consumption and quantify their accuracy for our case study home.

@@ -1,0 +1,16 @@
+Researchers have proposed numerous advanced scheduling algorithms for electrical loads that, in combination, would reduce the grid's peak usage.  However, as we show, there is little monetary incentive for consumers to adopt these scheduling algorithms.  While utilities are introducing new variable rate pricing plans to incentivize consumers to shift their power usage to low-price, off-peak periods, most loads do not have enough scheduling freedom to shift their usage many hours into the future.  Thus, we propose flat-power pricing to directly incentivize consumers to flatten their own demand, rather than shift it to low-price periods.  To evaluate flat-power pricing, we formulate a MILP that optimally schedules loads with different degrees of scheduling freedom---the ability to shift, slide, stretch, store, and sell---to minimize costs under both TOU/RTP pricing and flat-power pricing.  In each case, we find that for reasonable degrees of scheduling freedom, flat-power pricing offers greater savings than a TOU/RTP plan for each degree of scheduling freedom in isolation and in combination.  We argue that flat-power pricing, unlike variable rate pricing, is also scalable, stable, and simple.  Overall, our results suggest that flat-power pricing may be a better alternative than variable rate pricing for incentivizing consumers to use advanced load scheduling to reduce the grid's peak usage.
+
+
+
+
+
+
+% using new variable rate pricing plans, 
+
+%load scheduling algorithms for smart homes with the goal of reducing the grid's peak power usage. 
+
+
+%In recent years, researchers have proposed numerous advanced load scheduling algorithms for smart homes with the goal of reducing the grid's peak power usage.   
+
+
+% In parallel, utilities have introduced variable rate pricing plans to incentivize residential consumers to shift more of their power usage to low-price, off-peak periods, also with the goal of reducing the grid's peak power usage.  In this paper, we argue that variable rate pricing plans \emph{do not} incentivize consumers to adopt advanced load scheduling algorithms.  While beneficial to the grid, these algorithms simply do not lower a consumer's electric bill. To address the problem, we propose \emph{flat-power pricing}, which directly incentivizes consumers to flatten their own demand profile, rather than shift as much of their power usage as possible to low-cost, off-peak periods.  Since most loads have only limited scheduling freedom, load scheduling algorithms often cannot shift much, if any, power usage to low-cost, off-peak periods, which are often many hours in the future.  In contrast, flat-power pricing encourages consumers to shift power usage even over short time intervals to flatten demand. We evaluate the benefits of advanced load scheduling algorithms using flat-power pricing, showing that consumers save 11\% on their electric bill, compared with up to 40\% using an existing time-of-use rate plan.

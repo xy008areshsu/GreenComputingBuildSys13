@@ -1,0 +1,177 @@
+Rising electricity prices over the past 20 years combined with a growing awareness of the environmental effects of burning fossil fuels, e.g., air pollution, climate disruption, water contamination, is motivating both energy producers and consumers to better optimize their electricity generation and consumption, respectively.   The simplest and most direct way to optimize the electric grid is for consumers to simply use less energy.  Unfortunately, despite continuing improvements in energy-efficiency, society's energy demand continues to grow at a rapid pace---estimated to increase 56\% by 2040~\cite{eia-report2}---driven by both population growth and improving economic conditions in developing countries. Since reducing overall energy consumption presents many non-technical challenges, one promising alternative approach to grid optimization has been to focus on reducing its peak power usage.  
+
+The magnitude of the grid's peak usage has a disproportionate impact on electricity generation's capital and operational costs, as well as its carbon emissions.   For instance, a lower peak usage directly translates to less idle, unused generation capacity and a need for fewer power plants.  In addition, the marginal cost to generate each additional watt of electricity increases non-linearly, since utilities usually dispatch the highest-cost ``peaking" generators last.   In fact, the cost to generate each watt using an oil-based peaking generator can be as much as ten times the cost of using a coal-fired baseload power plant~\cite{ferc2008}.  Finally, since peaking generators tend to be the least efficient, they also produce more carbon emissions per watt. These trends have led utilities to introduce variable rate electricity pricing plans that incentivize residential consumers to shift their power usage to reduce the grid's peak. These pricing plans vary the price of electricity throughout the day, such that electricity costs more when grid demand is high, i.e., \emph{peak periods}, than when it is low, i.e., \emph{off-peak periods}.  Figure~\ref{fig:pricing} shows how electricity prices vary over a day with real time-of-use (TOU)~\cite{ontario-prices}  and real-time pricing (RTP)~\cite{illinois} plans.  With RTP plans, rates change every hour of every day based on electricity's real-time price in the wholesale market, while with TOU plans, rates change only a few times each day and each day's rate profile remains constant over long periods, e.g., 3-6 months.
+
+The goal of these new variable rate plans is to incentivize consumers to lower their electric bill by manually altering their behavior, i.e., when they perform certain energy-intensive tasks during the day.  For example, if electricity prices are much lower in the evening, consumers might choose to perform energy-intensive tasks, such as doing their laundry or running their dishwasher, at that time, rather than in the middle of the day.  In parallel, the benefits of reducing the grid's peak usage has motivated researchers to develop a variety of advanced load scheduling algorithms for buildings and homes that programmatically control when electrical devices (or \emph{loads}) operate to lower a building's electricity bill, e.g., ~\cite{smartcap,keshav12,nplug,krithi-ac,smartcharge,greencharge,keshav-elastic,culler-smartgridcomm}. Instead of requiring consumers to manually alter their behavior, which many consumers may choose not to do regardless of electricity's price, these scheduling algorithms exploit a limited degree of scheduling freedom available in a subset of loads.  This freedom includes the option to transparently \emph{shift}, \emph{slide}, \emph{stretch}, \emph{store}, or \emph{sell} power for some loads without consumer involvement.  For example, a scheduling algorithm may partially i) \emph{shift} a thermostatic or timer-driven load's duty cycle, ii) \emph{slide} a batched load's start time into the future, iii) \emph{stretch} an elastic load's operation to reduce its peak usage, iv) \emph{store} power in a battery to alter a load's profile, or v) \emph{sell} power produced by renewables back to the grid or other buildings, e.g., in a microgrid~\cite{iccps}.  Of course, each dimension of scheduling freedom has inherent limitations.  For example, a refrigerator may shift its duty cycle only so far before its interior temperature becomes too high and food spoils.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth]{graphs/rate_plans/rate.pdf} 
+\caption{Examples of how electricity rates vary under time-of-use (TOU) and real-time pricing (RTP).}
+\label{fig:pricing}
+%\vspace{-0.15cm}
+\end{figure}
+
+As prior research shows, widespread adoption of these algorithms would result in significant reductions in the grid's peak usage, which in-turn would result in a significant decrease in the cost to generate electricity.  Unfortunately, in this paper, we argue that today's variable rate pricing plans do not strongly incentivize consumers to adopt these algorithms.  In particular, we show that optimizing each degree of scheduling freedom, both in isolation or collectively, within reasonable limits does not significantly reduce, e.g., $\sim$11\% with TOU pricing, consumer electric bills.  We also describe the potential adverse effects to the electric grid, including grid oscillations and higher peak load, if consumers were to adopt advanced load scheduling algorithms in large numbers under these pricing plans.  Ultimately, these plans neither encourage nor support advanced load scheduling, especially at scale.  Rather, their goal is to reduce peak demand by incentivizing a small fraction of consumers to alter their behavior.
+
+To address the problem, we propose \emph{flat-power pricing} to incentivize consumers to flatten their own demand.  Flat-power pricing directly incentivizes load scheduling by charging a higher price for electricity that is above a consumer-specific target set \emph{a priori} by the utility.  The approach incentivizes shifting  power usage over shorter intervals than variable rate pricing, which results in greater savings from using advanced load scheduling algorithms.  In addition, as we discuss, since flat-power pricing encourages consumers (and load scheduling algorithms) to flatten their own demand, it avoids the adverse grid effects caused by the widespread adoption of load scheduling algorithms under today's variable rate plans.   Our hypothesis is that flat-power pricing is better at incentivizing advanced load scheduling algorithms---encouraging their adoption at large scales---than today's variable rate pricing plans.  In evaluating our hypothesis, we make the following contributions.
+
+\noindent {\bf Combined Load Scheduling.}  We develop a mixed integer linear programming (MILP) formulation that  combines all the degrees of scheduling freedom mentioned above to minimize electricity costs under variable rate pricing.  The MILP extends prior work that focuses on optimizing each degree of scheduling freedom in isolation.  For a representative home, we show that combined load scheduling is only able to lower the electric bill by 11\% and 20\% under an existing time-of-use (TOU) and real-time pricing (RTP) plans, respectively.
+
+\noindent {\bf Flat-power Pricing Model.}  We introduce flat-power pricing, and discuss its benefits relative to existing pricing models, including variable rate and peak-based pricing, with respect to incentivizing advanced load scheduling algorithms and encouraging consumers to change their behavior.  
+
+\noindent {\bf Evaluation.}  We alter our combined MILP formulation above to schedule loads to minimize electricity costs under our flat-power pricing plan.  For the same home as above, we show that with flat-power pricing, advanced load scheduling algorithms lower the electric bill by up to 40\%---significantly more than the savings from existing plans.
+ 
+ 
+%variable rate pricing plans have also 
+ 
+% As a result, under flat-power pricing, consumers save more money on their electric bill by adopting advanced load scheduling algorithms.  
+
+%We also highlight the primary drawback of flat-power pricing---a perceived lack of fairness across homes---and discuss ways to address the problem.
+ 
+
+%Outline: 
+%Section 1 - Introduction - 1.5 pages
+%Section 2 - Load Scheduling Background - 1 page
+%Section 3 - Combined Scheduling - Benefits - 1.5 pages
+%Section 4  - Flat-power Pricing - 1 page
+%Section 5 - Evaluation - 2 pages
+% Section 7: Conclusion - 1 page
+
+
+
+%alter the behavior of only a small fraction of consumers to reduce peak demand.
+
+%consumer behavior with  with the implicit assumption that only a small fraction of consumers would respond to the pricing incentives, 
+
+
+
+%since the original purpose of variable rate pricing plans was to alter consumer behavior
+
+
+%Setpoint: SmartCap, Krithi, Culler SmartGridComm, nPlug
+%Slide: Culler SmartGridCom
+%Stretch: Keshav eEnergy, Keshav SmartGridComm 2012
+%Store: SmartCharge, PeakCharge, Keshav eEnergy, Taneja eEnergy, Electric Cars (Keshav eEnergy)
+%Sell: BuildSys, CullerSmartGridCom, Green Charge (minimize selling)
+
+%BOSS implements these abstractions.
+
+
+%%hese load scheduling algorithms do not benefit from today's variable rate pricing plans, and that
+
+
+%Chasing low prices hoarding effects. 
+
+%Also discuss potential drawbacks of flat-power pricing.  Compare with peak power pricing plan.
+
+%We show that advanced load scheduling algorithms reduce
+% save consumers more money on their electrical
+% that flat-power pricing incentivizes 
+
+
+
+
+
+
+
+% incentivize consumers to shift as much power as possible to the lowest price period
+
+%To address the mismatch between 
+
+%There is fundamental mismatch between today's variable rate pricing plans and advanced load scheduling algorithms.  
+
+
+%
+%variable rate pricing plans 
+%
+%Variable rate pricing plans are not 
+%
+%
+%
+%
+%
+%Variable rate pricing plans 
+%
+%are useful 
+%
+%
+%
+%
+%
+%
+%each degree of scheduling freedom offers little benefit for reasonable at reasonable limits
+%collectively they offer even less (the whole is not greater than the sum of its parts).
+%
+%For the latter case, we argue that variable rate pricing plans were not designed for grid scale automation.  They don't work right.  
+%
+%
+%To address the problem, we introduce flat-power pricing, evaluate the benefits, and discuss it.  
+%
+%
+%
+%
+%
+%
+%These algorithms do not benefit from today's pricing plans.
+%
+%Today's pricing plans do not benefit from these algorithms.  
+%
+%
+%
+
+
+
+
+%while an algorithm may shift a refrigerator's duty cycle, such that it 
+%reduce peak usage, as well as take advantage of the new variable rate pricing plans to lower a building's electricity bill.  
+%Dimension. 
+%algorithms ma
+%algorithms may 
+%arbitrage electricity prices
+%hess algorithms make use of energy storage, such as batteries, are able to optimize for local generation by intermittent renewable energy sources, or operate across multiple buildings, i.e., a microgrid.  
+%These degrees of freedom include the ability to shift, slide, stretch, store, or sell a load's 
+%As we discuss in Section~\ref{sec:degrees}
+%Automated load scheduling changes the game over the other type of load scheduling.  
+%These algorithms are often also able to minimize a building's electricity bill 
+%In many cases, these algorithms 
+%are transparent users
+%which is intrusive and causes 
+% intrusive, 
+%These load scheduling algorithms are generally transparent to users, attempting to ex
+%seek to reduce peak usag
+%However, 
+%manually change their behavior 
+%The benefits above has led researchers to develop a variety of advanced load scheduling algorithms for buildings and homes, with the goal of reducing their peak usage.  
+%of reducing the grid's peak usage has led 
+%The benefits 
+%led utilities and government agencies to introduce 
+% least efficient peaking generators also tend to 
+%Have to bring in load flexibility.  
+%For example, the marginal cost to generate the last wa
+%determines 
+% both its cap
+%driven by population growth and improving economic conditions.
+%energy demand continues to grow 
+%, due to population 
+%utilities, researchers, 
+% increasing the motivation for society to better optimize energy generation and consumption 
+%
+%
+%
+%
+%
+% in better optimizing society's energy consumption 
+%
+%
+% motivated researchers, utilities, 
+%
+%
+%
+%smart grid optimize the electric grid
+%
+%
+%
+%The cost of electricity is increasing. In the past 25 years, the price of residential electricity has increased about 30\%. [1] With more appliance used in resident home, the demand of electricity has increased almost 50\% over 20 years. [3] 
+
+%\cite{smart-thermostat}

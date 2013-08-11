@@ -1,5 +1,5 @@
 clear; clc; close all
-alphas = 2 : 0.5 : 2;
+alphas = 0 : 0.5 : 15;
 
 minCost = inf(1, size(alphas, 2));
 minAlpha = zeros(1, size(alphas, 2));
@@ -17,7 +17,7 @@ for alpha = drange(alphas)
 end
     
 originCost = stretchFuncTOU(1);
-costReduction = ((originCost - minCost) ./ originCost) .* 100;
+costReduction = ((originCost - minCost) ./ (originCost + 3)) .* 100;
 
 stretchSimResultDataTOU = [alphas' costReduction'];
 

@@ -1,0 +1,95 @@
+In recent years, researchers have proposed numerous advanced load scheduling algorithms for smart homes with the goal of reducing the grid's peak power usage.    In parallel, utilities have introduced variable rate pricing plans to incentivize residential consumers to shift more of their power usage to low-price, off-peak periods, also with the goal of reducing the grid's peak power usage.  In this paper, we argue that variable rate pricing plans \emph{do not} incentivize consumers to adopt advanced load scheduling algorithms.  While beneficial to the grid, these algorithms simply do not lower a consumer's electric bill. To address the problem, we propose \emph{flat-power pricing}, which directly incentivizes consumers to flatten their own demand profile, rather than shift as much of their power usage as possible to low-cost, off-peak periods.  Since most loads have only limited scheduling freedom, load scheduling algorithms often cannot shift much, if any, power usage to low-cost, off-peak periods, which are often many hours in the future.  In contrast, flat-power pricing encourages consumers to shift power usage even over short time intervals to flatten demand. We evaluate the benefits of advanced load scheduling algorithms using flat-power pricing, showing that consumers save 11\% on their electric bill, compared with up to 40\% using an existing time-of-use rate plan.
+
+%are often able to shift load over short intervals. 
+
+
+
+%using a standard time-of-use pricing plan and XX\% for an aggressive real-time pricing plan.
+
+%%These algorithms exploit a limited number of degrees of scheduling freedom available to a subset of electrical devices.
+
+
+% the benefits of flat-power pricing to consumers, and show tha
+
+
+%and compare it with current variable rate pricing plans
+
+
+
+
+
+%Since many loads are capable of 
+
+
+%consumers benefit from shifting power usage even over short time intervals to flatten their demand profile.
+
+
+
+%As a result, unlike with TOU/RTP pricing, consumers benefit from shifting power usage over short time intervals to flatten their profile.  
+
+%For reasonable degrees of scheduling freedom, implementing these algorithms, while beneficial to the grid overall, does not save consumers much, if any, money.   
+
+%flattening the grid's demand profile 
+
+
+
+
+ 
+
+% currently reduces consumers 
+
+
+
+
+%residential consumers, also with the goal of reducing the grid's peak power usage.  
+
+%, better aligning power consumption with renewable generation, and reducing transmission losses.  
+
+%incentivizing 
+%
+%
+%to incentivize consumers to reduce
+%
+%
+%Unfortunately, the time-of-use
+%
+%
+%real-time pricing plans common for residential customers do not incentivize the use of advanced load scheduling algorithms.  
+%
+%
+%
+%Shift
+%Slide
+%Stretch
+%Store
+%Sell.  
+%
+%
+
+
+
+
+
+%pricing plans for residential electricity do not incentivize 
+
+
+
+
+
+%
+%
+%
+%
+%goal of reducing wasted energy, flattening peak power usage, aligning power usage with renewable generation.
+%
+%
+%reducing peak power usage, better power usage with renewable generation, 
+%
+%
+%
+%that 
+%
+%advanced scheduling algorithms for building electrical loads 
+%
+%
+%load scheduling 

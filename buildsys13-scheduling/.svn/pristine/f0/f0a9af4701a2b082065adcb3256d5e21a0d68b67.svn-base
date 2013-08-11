@@ -1,9 +1,0 @@
-%Outline: 
-%Section 1 - Introduction - 1.5 pages
-%Section 2 - Load Scheduling Background - 1 page
-%Section 3 - Combined Scheduling - Benefits - 1.5 pages
-%Section 4  - Flat-power Pricing - 1 page
-%Section 5 - Evaluation - 2 pages
-% Section 7: Conclusion - 1 page
-
-Papers in the previous work look at things in isolation.  We combine them.  Inspired by Parasol, which does something similar for computing loads in a solar-powered data center.  Home loads are a little different; have different degrees of scheduling freedom, but may have more limitations.  We use a linear program below to do the scheduling.
